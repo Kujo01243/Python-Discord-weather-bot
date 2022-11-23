@@ -23,9 +23,7 @@ def getTimestamp():
 
 serviceURL = "https://api.openweathermap.org/data/2.5/weather"
 pollingTime = float(input("Polling-Time [s]:"))
-ort = input("Ort  [*Uster]   :")
-if ort == "":
-    ort = 'Uster'
+ort = input("Ort     : ")
 
 appId = "a46716a76c270dcc6f0ad9968d7c2eb9"
 
