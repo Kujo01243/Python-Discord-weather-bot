@@ -1,11 +1,16 @@
 import discord
 import requests
 import json
-intents = discord.Intents.default()
-intents.message_content = True
-client = discord.Client(intents=intents)
-
-token = "MTA0NzE2MzM4OTkzMzI3NzIyNA.Guxsd6.UTQLlBNYp1boJk41j0bLqGpnRAM7FeHPVHEk1E"
+token = "MTA0NzE2MzM4OTkzMzI3NzIyNA.Gbsj8-.8fCeZKmiDjc6P7y5l5qtiIvwIOZpHM8s78hZcg"
 api_key = "a46716a76c270dcc6f0ad9968d7c2eb9"
 
+intents = discord.Intents.default()
+intents.message_content = True
+
+client = discord.Client(intents=intents)
+
 client.run(token)
+
+
+
+
