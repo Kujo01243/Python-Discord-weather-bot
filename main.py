@@ -1,5 +1,6 @@
 import discord
 from wetterabfrage import *
+from token import sali
 token = "MTA0NzE2MzM4OTkzMzI3NzIyNA.Gbsj8-.8fCeZKmiDjc6P7y5l5qtiIvwIOZpHM8s78hZcg"
 ########################################################################################
 intents = discord.Intents.all()
@@ -22,3 +23,4 @@ async def on_message(message):
  
 client.run(token)
 
+# todo: token und api in seperates File!!!
