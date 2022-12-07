@@ -26,6 +26,6 @@ async def on_message(message):
                     loop = 1
                 else:
                     sleep(5)
-                    await client.get_channel(1050097182969176274).send("Testy")
+                    await client.get_channel(timeoutchannel()).send("Testy")
 
 client.run(get_token())

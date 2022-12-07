@@ -5,3 +5,7 @@ def get_token():
 def get_api():
     api = "a46716a76c270dcc6f0ad9968d7c2eb9"
     return api
+
+def timeoutchannel():
+    timoutchannel_ID = 1050097182969176274
+    return timeoutchannel
