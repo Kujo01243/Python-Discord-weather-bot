@@ -7,7 +7,6 @@ pushstarter1 = "/setpush"
 intents = discord.Intents.all()
 client = discord.Client(command_prefix='!', intents=intents)
 
-
 @client.event
 async def on_message(message):
     if message.author == client.user:
@@ -18,13 +17,14 @@ async def on_message(message):
         if len(pushort) < 1:
             await message.channel.send("Bitte Ort eingeben")
         else:
+            await message.channel.send("Du wirst benachrichtigt, wenn die Temperatur in" + pushort + " Unter 0°C sinkt.")
             while loop == 0:
                 temp = getWeather(pushort)[8]
                 if temp < 0:
                     await message.channel.send("Hey, in" + pushort + " ist die Temperatur unter 0°C gesunken. Die Pushmeldung wurde beendet.")
                     loop = 1
                 else:
-                    sleep(2)
-
+                    sleep(5)
+                    await client.get_channel(1050097182969176274).send("Testy")
 
 client.run(get_token())
