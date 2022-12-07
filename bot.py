@@ -1,7 +1,6 @@
 import discord
 from wetterabfrage import *
-from abra
-
+from keys import *
 ########################################################################################
 intents = discord.Intents.all()
 client = discord.Client(command_prefix='!', intents=intents)
@@ -22,6 +21,4 @@ async def on_message(message):
 
 
  
-client.run(gettoken())
-
-# todo: token und api in seperates File!!!
+client.run(get_token())

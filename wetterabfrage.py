@@ -2,14 +2,14 @@ import datetime
 import requests
 import json
 import time
-appId = "a46716a76c270dcc6f0ad9968d7c2eb9"
+from keys import *
 ####################################################
 
 def getWeather(ort):
     serviceURL = "https://api.openweathermap.org/data/2.5/weather"
     firstTime = True
     while firstTime == True:
-        requestStr = serviceURL + "?q=" + ort + "&units=metric&lang=de&appid=" + appId
+        requestStr = serviceURL + "?q=" + ort + "&units=metric&lang=de&appid=" + get_api()
         responseStr = requests.get(requestStr)
 
         jsonResponse = json.loads(responseStr.text)
