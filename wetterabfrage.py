@@ -15,7 +15,7 @@ def getWeather(ort):
         jsonResponse = json.loads(responseStr.text)
         ortsname = jsonResponse['name']
         land = jsonResponse['sys']['country']
-        temp = str(jsonResponse['main']['temp'])
+        temp = jsonResponse['main']['temp']
         pressure = str(jsonResponse['main']['pressure'])
         humidity = str(jsonResponse['main']['humidity'])
         lon = str(jsonResponse['coord']['lon'])
@@ -24,7 +24,7 @@ def getWeather(ort):
         windSpeed = str(jsonResponse['wind']['speed'])
         windDirection = str(jsonResponse['wind']['deg'])
         firstTime = False
-        returnwert = [ortsname, land, temp, pressure, humidity, cloud, windSpeed, windDirection]
+        returnwert = [ortsname, land, str(temp), pressure, humidity, cloud, windSpeed, windDirection, temp]
         return returnwert
 
 
