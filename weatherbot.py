@@ -21,9 +21,4 @@ async def on_message(message):
             await message.channel.send("Das Wetter für: " + getWeather(eingabeort)[0] + ", " + getWeather(eingabeort)[1]+ ":" + "\nTemperatur: " + getWeather(eingabeort)[2] + "°C" +"\nLuftdruck: "+ getWeather(eingabeort)[3] + "mBar" + "\nLuftfäuchtigkeit: " + getWeather(eingabeort)[4] + "%" + "\nHimmel: " + getWeather(eingabeort)[5] + "\nWindgeschwindigkeit: " + getWeather(eingabeort)[6] + "m/s" + "\nWindrichtung: " + getWeather(eingabeort)[7] + "°")
 
 
-
-
-
-#müssen 2 Scripts
- 
 client.run(get_token())
