@@ -1,11 +1,11 @@
 import discord
 from time import sleep
-from keys import *
+from globale_variabeln import *
 from wetterabfrage import *
-####################################################
 pushstarter1 = "/setpush"
 intents = discord.Intents.all()
 client = discord.Client(command_prefix='!', intents=intents)
+####################################################
 
 @client.event
 async def on_message(message):
@@ -17,7 +17,8 @@ async def on_message(message):
         if len(pushort) < 1:
             await message.channel.send("Bitte Ort eingeben")
         else:
-            await message.channel.send("Du wirst benachrichtigt, wenn die Temperatur in" + pushort + " Unter 0°C sinkt.")
+            temp = getWeather(pushort)[8]
+            await message.channel.send("Du wirst benachrichtigt, wenn die Temperatur in" + pushort + " Unter 0°C sinkt. Aktuell liegt die Termperatur bei: " + str(temp) + "°C")
             while loop == 0:
                 temp = getWeather(pushort)[8]
                 if temp < 0:

@@ -1,6 +1,6 @@
 import discord
 from wetterabfrage import *
-from keys import *
+from globale_variabeln import *
 ########################################################################################
 intents = discord.Intents.all()
 client = discord.Client(command_prefix='!', intents=intents)
