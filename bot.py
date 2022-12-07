@@ -1,6 +1,6 @@
 import discord
 from wetterabfrage import *
-from 
+from abra
 
 ########################################################################################
 intents = discord.Intents.all()
