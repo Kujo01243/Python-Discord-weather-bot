@@ -23,7 +23,7 @@ def get_api():
     return api
 
 ##########################################################################
-#Start-String for weather
+#Start-String for weatherbot, pushbot and help
 def weatherbotstarter():
     weatherbotstartcommand = "/weather"
     return weatherbotstartcommand

@@ -5,4 +5,4 @@ Anleitung:
 4.) Channel_ID für Kanal herausfinden und in globale_variabeln einfügen
 6.) discord.py mit "pip install discord.py" installieren
 7.) repuests mit "pip install requests" installieren
-8.) die Scripts weatherbot.py und pushbot.py starten
+8.) Script weatherbot.py starten
