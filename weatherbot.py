@@ -1,6 +1,6 @@
 import discord
 from wetterabfrage import *
-from globale_variabeln import *
+from globale_funktionen import *
 from time import sleep
 ########################################################################################
 intents = discord.Intents.all()
@@ -18,7 +18,8 @@ async def on_message(message):
         loop = 0
         pushort = message.content.replace(pushstarter1, "")
         if len(pushort) < 1:
-            await message.channel.send("Bitte Ort eingeben")
+            embed = discord.Embed(title="Error", description="Bitte Ort eingeben", color=0xFF0000)
+            await message.channel.send(embed=embed)
         else:
             temp = getWeather(pushort)[8]
             embed = discord.Embed(title="Pushbot acticated",description="Du wirst benachrichtigt, wenn die Temperatur in" + pushort + " unter 0°C sinkt. Aktuell liegt die Termperatur bei: " + str(temp) + "°C" ,color=0x00ff00)

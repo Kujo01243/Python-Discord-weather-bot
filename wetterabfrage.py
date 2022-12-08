@@ -2,7 +2,7 @@ import datetime
 import requests
 import json
 import time
-from globale_variabeln import *
+from globale_funktionen import *
 ####################################################
 
 def getWeather(ort):
