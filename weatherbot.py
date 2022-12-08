@@ -14,6 +14,8 @@ pushstarter1 = pushbotstarter()
 async def on_message(message):
     if message.author == client.user:
         return
+    ##########################################################################
+    #pushbot
     if message.content.startswith(pushstarter1):
         loop = 0
         pushort = message.content.replace(pushstarter1, "")
@@ -33,12 +35,20 @@ async def on_message(message):
                 else:
                     sleep(5)
                     await client.get_channel(timeoutchannel()).send("notimeout")
+
+
+    ##########################################################################
+    #help
     if message.content.startswith(help1()) or message.content.startswith(help2()) and message.author != client.user:
         embed = discord.Embed(title="Hilfe", color=0xffff00)
         embed.add_field(name="Hilfe erhalten:", value="Mit den beiden Eingaben \"" + help1() + "\" und \"" + help2() + "\" rufst du dir diese Nachricht auf.", inline=False)
         embed.add_field(name="Wetterabfrage:", value="Mit der Eingabe \"" + weatherbotstarter() + " <Ort>\" kannst du dir das Wetter für einen Ort anzeigen", inline=True)
         embed.add_field(name="Pushbenachrichtigung:", value="Mit der Eingabe \"" + pushbotstarter() + " <Ort>\" kannst du dich benachrichten lassen, wenn das Wetter an deinem Ort unter null Grad Celsius sinkt.", inline=True)
         await message.channel.send(embed=embed)
+
+
+    ##########################################################################
+    #weatherbot
     if message.content.startswith(commandstarter1) and message.author != client.user:       #in eine funktion packen und dann auf weitere Eingabemöglichkeiten überprüfen
         eingabeort = message.content.replace(commandstarter1, "")
         eingabeort = eingabeort.lower()
