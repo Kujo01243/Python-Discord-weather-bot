@@ -33,3 +33,10 @@ def pushbotstarter():
     pushbotstartercommand = "/setpush"
     return pushbotstartercommand
 
+def help1():
+    help = "/help"
+    return help
+
+def help2():
+    help = "/?"
+    return help
