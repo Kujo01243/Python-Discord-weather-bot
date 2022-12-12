@@ -16,7 +16,7 @@ async def on_message(message):
         return
     ##########################################################################
     #pushbot
-    if message.content.startswith(pushstarter1):
+    if message.content.startswith(pushstarter1) and message.author != client.user:
         loop = 0
         pushort = message.content.replace(pushstarter1, "")
         if len(pushort) < 1:
@@ -35,6 +35,9 @@ async def on_message(message):
                 else:
                     sleep(5)
                     await client.get_channel(timeoutchannel()).send("notimeout")
+                    
+                    
+
 
 
     ##########################################################################
@@ -56,7 +59,7 @@ async def on_message(message):
             embed = discord.Embed(title="Error", description="Bitte Ort eingeben", color=0xFF0000)
             await message.channel.send(embed=embed)
         else:
-            embed = discord.Embed(title="Wetter:", color=0x00ff00)
+            embed = discord.Embed(title="Wetter:", url=getweathersource() + "/city/" + getWeather(eingabeort)[9] , color=0x00ff00)
             embed.add_field(name="Ort und Land:", value=getWeather(eingabeort)[0] + ", " + getWeather(eingabeort)[1], inline=False)
             embed.add_field(name="Temperatur:", value=getWeather(eingabeort)[2] + "°C", inline=True)
             embed.add_field(name="Luftdruck:", value=getWeather(eingabeort)[3] + "mBar", inline=True)
