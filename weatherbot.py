@@ -59,7 +59,7 @@ async def on_message(message):
             embed = discord.Embed(title="Error", description="Bitte Ort eingeben", color=0xFF0000)
             await message.channel.send(embed=embed)
         else:
-            embed = discord.Embed(title="Wetter:", url=getweathersource() + "/city/" + getWeather(eingabeort)[9] , color=0x00ff00)
+            embed = discord.Embed(title="Wetter", url=getweathersource(getWeather(eingabeort)[9]) , color=0x00ff00)
             embed.add_field(name="Ort und Land:", value=getWeather(eingabeort)[0] + ", " + getWeather(eingabeort)[1], inline=False)
             embed.add_field(name="Temperatur:", value=getWeather(eingabeort)[2] + "°C", inline=True)
             embed.add_field(name="Luftdruck:", value=getWeather(eingabeort)[3] + "mBar", inline=True)
@@ -67,6 +67,8 @@ async def on_message(message):
             embed.add_field(name="Himmel:", value=getWeather(eingabeort)[5], inline=True)
             embed.add_field(name="Windgeschwindigkeit:", value=getWeather(eingabeort)[6] + "m/s", inline=True)
             embed.add_field(name="Windrichtung:", value=getWeather(eingabeort)[7] + "°", inline=True)
+            embed.set_author(name="google maps", url=getgoogleplace(getWeather(eingabeort)[0]),icon_url=mapsicon())
+            embed.set_footer(text="openweathermap api")
             await message.channel.send(embed=embed)
 
 client.run(get_token())

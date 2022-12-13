@@ -24,8 +24,18 @@ def get_api():
     return api
 
 #Website für Titel (Wetterquelle)
-def getweathersource():
-    source = "https://openweathermap.org"
+def getweathersource(ort):
+    source = "https://openweathermap.org/city/" + ort
+    return source
+
+#Website google maps
+def getgoogleplace(ort):
+    source = "https://google.ch/maps/place/" + ort
+    return source
+
+#Link für google maps icon
+def mapsicon():
+    source = "https://cdn-icons-png.flaticon.com/512/2991/2991231.png"
     return source
 ##########################################################################
 #Start-String for weatherbot, pushbot and help
@@ -37,10 +47,6 @@ def weatherbotstarter():
 def pushbotstarter():
     pushbotstartercommand = "/setpush"
     return pushbotstartercommand
-
-def pusbotstoper():
-    pushbotstoppercommand = "/stoppush"
-    return pushbotstoppercommand
 
 def help1():
     help = "/help"
