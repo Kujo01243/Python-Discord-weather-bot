@@ -24,14 +24,14 @@ async def on_message(message):
             await message.channel.send(embed=embed)
         else:
             temp = getWeather(pushort)[8]
-            embed = discord.Embed(title="Pushbot acticated",description="Du wirst benachrichtigt, wenn die Temperatur in " + getWeather(pushort)[0] + " unter 0°C sinkt. Aktuell liegt die Termperatur bei: " + str(temp) + "°C" ,color=0x00ff00)
+            embed = discord.Embed(title="Pushbot acticated",description="Du wirst benachrichtigt, wenn die Temperatur in " + getWeather(pushort)[0] + " unter 0°C sinkt. Aktuell liegt die Termperatur bei: " + str(temp) + "°C" , url=getweathersource(getWeather(pushort)[9]), color=0x00ff00)
             embed.set_author(name="google maps", url=getgoogleplace(getWeather(pushort)[0]),icon_url=mapsicon())
             embed.set_footer(text=apisource())
             await message.channel.send(embed=embed)
             while loop == 0:
                 temp = getWeather(pushort)[8]
                 if temp < 0:
-                    embed = discord.Embed(title="Minusgrade!!!",description="Hey, in " + getWeather(pushort)[0] + " ist die Temperatur unter 0°C gesunken. Die Pushmeldung wurde beendet. (aktuelle Temperatur: " + str(temp) + "°C)" ,color=0x0088ff)
+                    embed = discord.Embed(title="Minusgrade!!!",description="Hey, in " + getWeather(pushort)[0] + " ist die Temperatur unter 0°C gesunken. Die Pushmeldung wurde beendet. (aktuelle Temperatur: " + str(temp) + "°C)" ,url=getweathersource(getWeather(pushort)[9]), color=0x0088ff)
                     embed.set_author(name="google maps", url=getgoogleplace(getWeather(pushort)[0]),icon_url=mapsicon())
                     embed.set_footer(text=apisource())
                     await message.channel.send(embed=embed)
