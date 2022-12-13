@@ -55,3 +55,15 @@ def help1():
 def help2():
     help = "/?"
     return help
+
+##########################################################################
+#errormeldung text
+def errortext():
+    meldung = "Bitte Ort eingeben. Mit \"/help\" oder \"/?\" bekommst du Hilfe."
+    return meldung
+
+##########################################################################
+#benutzte api
+def apisource():
+    source = "openweathermap.org api"
+    return source

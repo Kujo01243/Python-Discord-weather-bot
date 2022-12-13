@@ -21,7 +21,6 @@ def getWeather(ort):
     windSpeed = str(jsonResponse['wind']['speed'])
     windDirection = str(jsonResponse['wind']['deg'])
     weatherid = str(jsonResponse['id'])
-    firstTime = False
     returnwert = [ortsname, land, str(temp), pressure, humidity, cloud, windSpeed, windDirection, temp, weatherid]
     return returnwert
 

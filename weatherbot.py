@@ -20,23 +20,25 @@ async def on_message(message):
         loop = 0
         pushort = message.content.replace(pushstarter1, "")
         if len(pushort) < 1:
-            embed = discord.Embed(title="Error", description="Bitte Ort eingeben", color=0xFF0000)
+            embed = discord.Embed(title="Error", description=errortext(), color=0xFF0000)
             await message.channel.send(embed=embed)
         else:
             temp = getWeather(pushort)[8]
-            embed = discord.Embed(title="Pushbot acticated",description="Du wirst benachrichtigt, wenn die Temperatur in" + pushort + " unter 0°C sinkt. Aktuell liegt die Termperatur bei: " + str(temp) + "°C" ,color=0x00ff00)
+            embed = discord.Embed(title="Pushbot acticated",description="Du wirst benachrichtigt, wenn die Temperatur in " + getWeather(pushort)[0] + " unter 0°C sinkt. Aktuell liegt die Termperatur bei: " + str(temp) + "°C" ,color=0x00ff00)
+            embed.set_author(name="google maps", url=getgoogleplace(getWeather(pushort)[0]),icon_url=mapsicon())
+            embed.set_footer(text=apisource())
             await message.channel.send(embed=embed)
             while loop == 0:
                 temp = getWeather(pushort)[8]
                 if temp < 0:
-                    embed = discord.Embed(title="Minusgrade!!!",description="Hey, in" + pushort + " ist die Temperatur unter 0°C gesunken. Die Pushmeldung wurde beendet. (aktuelle Temperatur: " + str(temp) + "°C)" ,color=0x0088ff)
+                    embed = discord.Embed(title="Minusgrade!!!",description="Hey, in " + getWeather(pushort)[0] + " ist die Temperatur unter 0°C gesunken. Die Pushmeldung wurde beendet. (aktuelle Temperatur: " + str(temp) + "°C)" ,color=0x0088ff)
+                    embed.set_author(name="google maps", url=getgoogleplace(getWeather(pushort)[0]),icon_url=mapsicon())
+                    embed.set_footer(text=apisource())
                     await message.channel.send(embed=embed)
                     loop = 1
                 else:
                     sleep(5)
                     await client.get_channel(timeoutchannel()).send("notimeout")
-                    
-                    
 
 
 
@@ -56,7 +58,7 @@ async def on_message(message):
         eingabeort = message.content.replace(commandstarter1, "")
         eingabeort = eingabeort.lower()
         if len(eingabeort) < 1:
-            embed = discord.Embed(title="Error", description="Bitte Ort eingeben", color=0xFF0000)
+            embed = discord.Embed(title="Error", description=errortext(), color=0xFF0000)
             await message.channel.send(embed=embed)
         else:
             embed = discord.Embed(title="Wetter", url=getweathersource(getWeather(eingabeort)[9]) , color=0x00ff00)
@@ -68,7 +70,7 @@ async def on_message(message):
             embed.add_field(name="Windgeschwindigkeit:", value=getWeather(eingabeort)[6] + "m/s", inline=True)
             embed.add_field(name="Windrichtung:", value=getWeather(eingabeort)[7] + "°", inline=True)
             embed.set_author(name="google maps", url=getgoogleplace(getWeather(eingabeort)[0]),icon_url=mapsicon())
-            embed.set_footer(text="openweathermap api")
+            embed.set_footer(text=apisource())
             await message.channel.send(embed=embed)
 
 client.run(get_token())
