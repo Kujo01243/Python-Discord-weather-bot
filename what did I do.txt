@@ -1,3 +1,0 @@
-pip install discord.py
-pip install requests
-auf macbook im Python-Ordner "Install Certificates.command" ausführen
