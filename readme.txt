@@ -1,4 +1,5 @@
 Anleitung um auf eigenem Server einzurichten:
+
 1.) Bot_Token herausfinden und in globale_variabeln einfügen
 2.) Wetter API erstellen und in globale_variabeln einfügen
 3.) auf Server einen Kanal erstellen, der nur dafür da ist, damit der Bot in kein Timeout kommt, denn er wird dort alle 5 Sekunden eine Nachricht reinschreiben beim Pushbot. 
