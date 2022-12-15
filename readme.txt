@@ -6,5 +6,7 @@ Anleitung um auf eigenem Server einzurichten:
 4.) Channel_ID für Kanal herausfinden und in globale_variabeln einfügen
 6.) Discord.py mit "pip install discord.py" installieren
 7.) Repuests mit "pip install requests" installieren
-8.) Script weatherbot.py starten
-9.) Auf macbook im Python-Ordner "Install Certificates.command" ausführen
+8.) Json mit "pip install json" installieren
+9.) Time mit "pip install time" installieren
+10.) Script weatherbot.py starten
+11.) Auf macbook im Python-Ordner "Install Certificates.command" ausführen
