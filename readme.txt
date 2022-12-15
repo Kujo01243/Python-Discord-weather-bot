@@ -9,4 +9,4 @@ Anleitung um auf eigenem Server einzurichten:
 8.) Json mit "pip install json" installieren
 9.) Time mit "pip install time" installieren
 10.) Script weatherbot.py starten
-11.) Auf macbook im Python-Ordner "Install Certificates.command" ausführen
+11.) Auf MacBook im Python-Ordner "Install Certificates.command" ausführen
